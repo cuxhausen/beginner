@@ -9,10 +9,12 @@ true_domain = ['hotmail.com', 'live.com', 'msn.com', 'yahoo.com', 'ymail.com', '
 if element not in e_list:
     print("You entered the wrong email address")
 else:
-    index = email.index('@')
+    index = email.index(element)
     username = email[:index]
     domain = email[index+1:]
-
-    print("\nYour email address: ", email)
-    print("Username: ", username)
-    print("Domain name: ", domain)
+    if domain not in true_domain:
+        print("You have entered an email address with an incorrect domain name")
+    else:
+        print("\nYour email address: ", email)
+        print("Username: ", username)
+        print("Domain name: ", domain)
